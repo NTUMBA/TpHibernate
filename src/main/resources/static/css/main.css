@@ -1,0 +1,132 @@
+*{
+	box-sizing:border-box;
+}
+body{
+	height: 100%;
+	background-image:url('../img/dating.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+section{
+	
+	padding: 25px;
+	width: 85%;
+	background-color: #add8e6;
+	text-align: center;
+	height: 100%;
+	border-radius: 8px;
+	opacity: 0.80;
+}
+section,h1{
+	margin: 0 auto;
+} 
+img .moines{
+	
+	max-width:100px;
+	max-height: 100px ;
+	float: left;
+	border-radius: 20px 100px;
+}
+img .couple{
+	max-width:300px;
+	max-height: 300px ;
+}
+h1{
+	
+	padding: 10px;
+	color: orange;
+	background-color: #FFE;
+	width: 15%;
+	border:1px solid grey ;
+	border-radius: 6px;
+}
+h1,li{
+	font-weight: bold;
+}
+h2{
+	margin-top: 150px;
+	color: #FFE ;
+}
+ul{
+	max-width:60%;
+	max-height: 90%;
+	background-color: orange;
+	border: 1px solid red;
+	display: flex;
+}
+li{
+	color: white;
+	margin: 0 auto;
+	text-decoration: none;
+	list-style: none;
+	padding: 5px;
+}
+form{
+	
+	margin: 20px auto;
+	padding: 18px;
+	width: 85%;
+	background-color: orange;
+	border-radius: 10px;
+}
+.container{
+	display: flex;
+}
+label{
+	margin-top: 15px;
+}
+input{
+	margin-top: 8px;
+	text-align: center;
+	border-radius: 6px;
+}
+.userIdentification,.photocentreInterest,.situationApparence{
+	margin: 0 auto;
+	padding: 20px;
+}
+/* .userIdentification{
+	float: left;
+} */
+
+/* .situationApparence{ */
+/* 	float: right;
+	margin-left: 75px;
+} */
+/* .userIdentification,.situationApparence{
+	text-align: left;
+} */
+
+
+.response{
+	float: right;
+	width:250px;
+	height:100px;
+	margin: 50px auto;
+	background-color: #FFE  ;
+	color: blue;
+	font-weight: bold;
+}
+a .enregistrement{
+	color: #FFE!important;
+}
+.supprimer{
+	width: 300px;
+}
+
+
+/*##########################PSEUDO CLASS ####*/
+.response:hover{
+	font-size: 1.1em;
+	background-color: blue  ;
+	color: orange;
+}
+
+
+/*#############MEDIAQUERIES############################*/
+
+@media(max-width: 450px){
+	h1{
+		font-size: 0.5em;
+		
+		}
+		

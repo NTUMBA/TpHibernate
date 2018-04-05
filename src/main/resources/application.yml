@@ -1,0 +1,34 @@
+spring:
+  #locale i18n
+  mvc:
+    locale: fr
+    locale-resolver: fixed
+
+  # Bdd connect
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/siterencontre?createDatabaseIfNotExist=true
+    username: sam
+    password: 123456Sam
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  # i18n
+  messages:
+    basename: messages
+    encoding: UTF-8
+    fallback-to-system-locale: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE

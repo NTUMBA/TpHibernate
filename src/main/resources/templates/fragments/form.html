@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Dating</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="stylesheet" type="text/css" media="all" th:href="@{../static/css/main.css}" /> -->
+<link rel="stylesheet" type="text/css" media="all"
+	href="../css/main.css" />
+</head>
+<body>
+	<section>
+	<h1>LE SITE DE RENCONTRE DE PROFESSIONNELS</h1>
+		<form th:action="@{/fragmentsform}" th:method="POST">
+			<div class="container">
+				<div class="userIdentification">
+					<fieldset>
+						<legend>UTILISATEUR</legend>
+						<input th:field="*{user.email}" th:type="email"
+							th:placeholder="#{user.email}"> <span
+							th:if="${#fields.hasErrors('user.email')}"
+							th:errors="*{user.email}"></span> <br> 
+						<select th:field="*{user.sexe}">
+							<option value="" th:text="#{user.sexe}" selected></option>
+							<option th:each="s : ${sexe}" th:value="${s}"
+								th:text="${s.name()}"></option>
+						</select> <span th:if="${#fields.hasErrors('user.sexe')}"
+							th:errors="*{user.sexe}"></span> <br> 
+						<input th:field="*{user.lastName}" th:type="text"
+							th:placeholder="#{user.lastName}" pattern="(?i)[a-z -_]{1,70}">
+						<span th:if="${#fields.hasErrors('user.lastName')}"
+							th:errors="*{user.lastName}"></span> <br> 
+						<input th:field="*{user.firstName}" th:type="text"
+							th:placeholder="#{user.firstName}" pattern="(?i)[a-z -_]{1,100}">
+						<span th:if="${#fields.hasErrors('user.firstName')}"
+							th:errors="*{user.firstName}"></span> <br> <input
+							th:field="*{user.pseudo}" th:type="text"
+							th:placeholder="#{user.pseudo}"> <span
+							th:if="${#fields.hasErrors('user.pseudo')}"
+							th:errors="*{user.pseudo}"></span> <br> <input
+							th:field="*{user.birthday}" th:type="date"
+							th:placeholder="#{user.birthday}"> <span
+							th:if="${#fields.hasErrors('user.birthday')}"
+							th:errors="*{user.birthday}"></span> <br> <input
+							th:field="*{user.password}" th:type="password"
+							th:placeholder="#{user.password}"> <span
+							th:if="${#fields.hasErrors('user.password')}"
+							th:errors="*{user.password}"></span> <br>
+						<textarea th:field="*{user.description}" th:type="text"
+							th:placeholder="#{user.description}"
+							pattern="(?i)[a-z. -!,;:_()]{0,1000}"></textarea>
+						<span th:if="${#fields.hasErrors('user.description')}"
+							th:errors="*{user.description}"></span> <br> <input
+							th:field="*{user.phone}" th:type="text"
+							th:placeholder="#{user.phone}" pattern="^0[0-9]{9}$"> <span
+							th:if="${#fields.hasErrors('user.phone')}"
+							th:errors="*{user.phone}"></span> <br>
+					</fieldset>
+
+					<fieldset>
+						<legend>ADRESSE</legend>
+						<input th:field="*{adresse.number}" th:type="number"
+							th:placeholder="#{adresse.number}"> <span
+							th:if="${#fields.hasErrors('adresse.number')}"
+							th:errors="*{adresse.number}"></span> <br> 
+							<input th:field="*{adresse.town}" th:type="text"
+							th:placeholder="#{adresse.town}"> <span
+							th:if="${#fields.hasErrors('adresse.town')}"
+							th:errors="*{adresse.town}"></span> <br> 
+						<select th:field="*{adresse.typeStreet}">
+							<option value="" th:text="#{adresse.typeStreet}" selected></option>
+							<option th:each="type : ${typeStreet}" th:value="${type.name()}"
+								th:text="${type}"></option>
+						</select> <span th:if="${#fields.hasErrors('adresse.typeStreet')}"
+							th:errors="*{adresse.typeStreet}"></span> <br> 
+							<input th:field="*{adresse.nameStreet}" th:type="text"
+							th:placeholder="#{adresse.nameStreet}"> <span
+							th:if="${#fields.hasErrors('adresse.nameStreet')}"
+							th:errors="*{adresse.nameStreet}"></span> <br> 
+							<input th:field="*{adresse.complement}" th:type="text"
+							th:placeholder="#{adresse.complement}"> <span
+							th:if="${#fields.hasErrors('adresse.complement')}"
+							th:errors="*{adresse.complement}"></span> <br> 
+							<input th:field="*{adresse.postalCode}" th:type="number"
+							th:placeholder="#{adresse.postalCode}"> <span
+							th:if="${#fields.hasErrors('adresse.postalCode')}"
+							th:errors="*{adresse.postalCode}"></span> <br> 
+							<select th:field="*{adresse.prefix}">
+							<option value="" th:text="#{adresse.prefix}" selected></option>
+							<option th:each="p : ${prefix}" th:value="${p}"
+								th:text="${p.name()}"></option>
+						</select> <span th:if="${#fields.hasErrors('adresse.prefix')}"
+							th:errors="*{adresse.prefix}"></span> <br>
+					</fieldset>
+				</div>
+				<div class="photocentreInterest">
+					<fieldset>
+						<legend>PHOTOS</legend>
+						<label for="link" class="label-file" th:text="#{photo.link}"></label>
+						<input type="file" th:field="*{photo.link}" multiple="multiple"
+							th:placeholder="#{photo.link}" class="input-file"> <span
+							th:if="${#fields.hasErrors('photo.link')}"
+							th:errors="*{photo.link}"></span> <br> <img
+							src="img/couple.jpg" class="couple" alt="couple">
+					</fieldset>
+					<fieldset>
+						<legend>CENTRE D'INTERET</legend>
+						<input type="text" th:field="*{ci.sport}"
+							th:placeholder="#{ci.sport}"> <span
+							th:if="${#fields.hasErrors('ci.sport')}" th:errors="*{ci.sport}"></span>
+						<br> <input type="text" th:field="*{ci.hobby}"
+							th:placeholder="#{ci.hobby}"> <span
+							th:if="${#fields.hasErrors('ci.hobby')}" th:errors="*{ci.hobby}"></span>
+						<br>
+					</fieldset>
+				</div>
+				<div class="situationApparence">
+					<fieldset>
+						<legend>SITUATION</legend>
+						
+						<select
+							th:field="*{situation.statusPro}">
+							<option value="" th:text="#{situation.statusPro}" selected></option>
+							<option th:each="w : ${statusPro}" th:value="${w}"
+								th:text="${w.name()}"></option>
+						</select>	
+						<select
+							th:field="*{situation.statusPerso}">
+							<option value="" th:text="#{situation.statusPerso}" selected></option>
+							<option th:each="s : ${statusPerso}" th:value="${s}"
+								th:text="${s.name()}"></option>
+						</select>
+						 <br> <span th:if="${#fields.hasErrors('adresse.prefix')}"
+							th:errors="*{adresse.prefix}"></span> <input
+							th:field="*{situation.numChild}" th:type="text"
+							th:placeholder="#{situation.numChild}"> <span
+							th:if="${#fields.hasErrors('situation.numChild')}"
+							th:errors="*{situation.numChild}"></span> <br> <select
+							th:field="*{situation.orientation}">
+							<option value="" th:text="#{situation.orientation}" selected></option>
+							<option th:each="o : ${orientation}" th:value="${o}"
+								th:text="${o.name()}"></option>
+						</select> <span th:if="${#fields.hasErrors('situation.orientation')}"
+							th:errors="*{situation.orientation}"></span> <br> 
+						<select
+							th:field="*{situation.fumeur}">
+							<option value="" th:text="#{situation.fumeur}" selected></option>
+							<option th:each="f : ${fumeur}" th:value="${f.name()}"
+								th:text="#{${f}}"></option>
+						</select> <span th:if="${#fields.hasErrors('situation.fumeur')}"
+							th:errors="*{situation.fumeur}"></span> <br> <select
+							th:field="*{situation.alcool}">
+							<option value="" th:text="#{situation.alcool}" selected></option>
+							<option th:each="a : ${alcool}" th:value="${a.name()}"
+								th:text="#{${a}}"></option>
+						</select> <span th:if="${#fields.hasErrors('situation.alcool')}"
+							th:errors="*{situation.alcool}"></span> <br>
+					</fieldset>
+					<fieldset>
+						<legend>APPARENCE</legend>
+						<input th:field="*{apparence.size}" th:type="number"
+							th:placeholder="#{apparence.size}"> <span
+							th:if="${#fields.hasErrors('apparence.size')}"
+							th:errors="*{apparence.size}"></span> <br> <input
+							th:field="*{apparence.masse}" th:type="number"
+							th:placeholder="#{apparence.masse}"> <span
+							th:if="${#fields.hasErrors('apparence.masse')}"
+							th:errors="*{apparence.masse}"></span> <br> <select
+							th:field="*{apparence.eyes}">
+							<option value="" th:text="#{apparence.eyes}" selected></option>
+							<option th:each="c : ${colorEyes}" th:value="${c}"
+								th:text="${c.name()}"></option>
+						</select> <span th:if="${#fields.hasErrors('apparence.eyes')}"
+							th:errors="*{apparence.eyes}"></span> <br> <select
+							th:field="*{apparence.origine}">
+							<option value="" th:text="#{apparence.origine}" selected></option>
+							<option th:each="o : ${origine}" th:value="${o}"
+								th:text="${o.name()}"></option>
+						</select> <span th:if="${#fields.hasErrors('apparence.origine')}"
+							th:errors="*{apparence.origine}"></span> <br> <select
+							th:field="*{apparence.hair}">
+							<option value="" th:text="#{apparence.hair}" selected></option>
+							<option th:each="c : ${colorHair}" th:value="${c}"
+								th:text="${c.name()}"></option>
+						</select> <span th:if="${#fields.hasErrors('apparence.hair')}"
+							th:errors="*{apparence.hair}"></span> <br> <select
+							th:field="*{apparence.typeHair}">
+							<option value="" th:text="#{apparence.typeHair}" selected></option>
+							<option th:each="c : ${typeHair}" th:value="${c}"
+								th:text="${c.name()}"></option>
+						</select> <span th:if="${#fields.hasErrors('apparence.typeHair')}"
+							th:errors="*{apparence.typeHair}"></span> <br>
+					</fieldset>
+				</div>
+
+
+			</div>
+
+
+			<input class="response" type="submit" th:value="#{submit}">
+		</form>
+
+	</section>
+
+
+</body>
+</html>

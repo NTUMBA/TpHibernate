@@ -1,0 +1,25 @@
+<nav xmlns:th="http://www.thymeleaf.org" th:fragment="header" class="header">
+    <ul>
+        <li><a th:href="@{/}" th:text="#{home}"></a></li>
+        <li><a th:href="@{/register}" th:text="#{register}"></a></li>
+        <li th:if="${session.email == null}"><a href="#open-modal" th:text="#{login}"></a></li>
+        <li th:if="${session.email != null}"><a th:href="@{/logout}" th:text="#{logout}"></a></li>
+    </ul>
+
+    <div id="open-modal" class="modal-window">
+        <div>
+            <form th:action="@{login}" th:object="${userLogin}" th:method="POST">
+                <a href="#modal-close" title="Close" class="modal-close">Close</a>
+                <div>
+                    <input type="email" placeholder="email" th:field="*{email}">
+                </div>
+                <div>
+                    <input type="password" placeholder="password" th:field="*{password}">
+                </div>
+                <div>
+                    <input type="submit" value="se connecter">
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
