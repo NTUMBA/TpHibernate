@@ -10,7 +10,7 @@ body{
 section{
 	
 	padding: 25px;
-	width: 85%;
+	width: 82%;
 	background-color: #add8e6;
 	text-align: center;
 	height: 100%;
@@ -20,7 +20,7 @@ section{
 section,h1{
 	margin: 0 auto;
 } 
-img .moines{
+ .moines{
 	
 	max-width:100px;
 	max-height: 100px ;
@@ -31,12 +31,11 @@ img .couple{
 	max-width:300px;
 	max-height: 300px ;
 }
-h1{
-	
+h1{	
 	padding: 10px;
 	color: orange;
 	background-color: #FFE;
-	width: 15%;
+	width: 20%;
 	border:1px solid grey ;
 	border-radius: 6px;
 }
@@ -61,22 +60,40 @@ li{
 	list-style: none;
 	padding: 5px;
 }
+
+a{
+	padding: 6px;
+	text-decoration: none;
+	color: bluee;
+	width: 550px;
+	height: 200px;
+	background-color: #FFE;
+	border: 1px solid orange;
+}
 form{
 	
 	margin: 20px auto;
 	padding: 18px;
-	width: 85%;
+	width: 87%;
 	background-color: orange;
 	border-radius: 10px;
+}
+
+textarea{
+	width: 150px;
+	height: 150px;
+}
+input,textarea,select,option{
+	margin: 2px;
 }
 .container{
 	display: flex;
 }
 label{
-	margin-top: 15px;
+	margin-top: 8px;
 }
 input{
-	margin-top: 8px;
+	margin-top: 5px;
 	text-align: center;
 	border-radius: 6px;
 }
@@ -109,8 +126,20 @@ input{
 a .enregistrement{
 	color: #FFE!important;
 }
-.supprimer{
-	width: 300px;
+a{
+   width: 550px;
+	height: 200px;
+}
+.validation{
+	width: 100px;
+	height: 70px;
+}
+.validation,a{
+	padding: 6px;
+	text-decoration: none;
+	color: bluee;
+	background-color: #FFE;
+	border: 1px solid orange;
 }
 
 
@@ -119,6 +148,12 @@ a .enregistrement{
 	font-size: 1.1em;
 	background-color: blue  ;
 	color: orange;
+}
+a:hover{
+	font-size: 1.1em;
+	background-color:orange ;
+	color: blue;
+	
 }
 
 
