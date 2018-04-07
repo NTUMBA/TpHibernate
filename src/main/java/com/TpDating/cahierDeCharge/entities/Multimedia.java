@@ -27,7 +27,7 @@ public class Multimedia {
     @Pattern(regexp = "(?i)[a-z -_]{1,50}")
     private String title;
     @Column(name = "artiste")
-    @Pattern(regexp = "(?i)[a-z -_]{1,50}")
+    @Pattern(message = "Artiste name  lack or invalid format, exceed 50 characters", regexp = "(?i)[a-z -_]{1,50}")
     private String artist;
 
     @ManyToMany(mappedBy = "multimedias")

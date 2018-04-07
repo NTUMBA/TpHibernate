@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang=fr xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <th:block th:replace="fragments/head"></th:block>
+</head>
+<body>
+<div class="">
+    <div id="open-modal" class="modal-window">
+        <div>
+            <form th:action="@{login}" th:object="${userLogin}" th:method="POST">
+                <a href="#modal-close" title="Close" class="modal-close">Close</a>
+                <div>
+                    <input type="email" placeholder="email" th:field="*{email}">
+                </div>
+                <div>
+                    <input type="password" placeholder="password" th:field="*{password}">
+                </div>
+                <div>
+                    <input type="submit" value="se connecter">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

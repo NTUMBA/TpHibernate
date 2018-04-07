@@ -3,13 +3,16 @@
   <head>
 	    <title>Dating welcome</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <link rel="stylesheet" type="text/css" media="all" th:href="@{../static/css/main.css}" />
+	    <link rel="stylesheet" type="text/css" media="all" th:href="@{css/main.css}" />
   </head>
   <body>
 	<section>
-	<img src="../static/img/moines.jpg" alt="moines">
+	<img src="img/moines.jpg" alt="moines">
+	<!--header-->
+    <th:block th:replace="fragments/header :: header"></th:block>
+    <!--header-->
 	  <h1>CONGRATULATION</h1>
-		<p th:if="${session.nom != null}" th:text="|Bienvenue + ${session.nom}"><p>
+		<p th:if="${session.nom != null}" th:text="|Bienvenue  ${session.pseudo}"><p>
 	</section>	
   </body>
 </html>

@@ -15,10 +15,10 @@ public class CentreInteret {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(columnDefinition = "text")
-    @Pattern(regexp = "(?i)[a-z -_,]{0,1000}")
+    @Pattern(regexp = "(?i)[a-z -_,]{0,450}", message = "Sport lack or invalid formatexceed 450 characters")
     private String sport;
     @Column(name = "loisir", columnDefinition = "text")
-    @Pattern(regexp = "(?i)[a-z -_,]{0,1000}")
+    @Pattern(message = "Name street lack or invalid format, exceed 450 characters", regexp = "(?i)[a-z -_,]{0,450}")
     private String hobby;
 
     @ManyToMany(mappedBy = "centreInterets")

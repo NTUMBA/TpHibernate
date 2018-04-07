@@ -25,15 +25,15 @@ public class Utilisateur {
 	
     @Id
     @Column(length = 100)
-    @Pattern(message = "Email not good", regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])")
+    @Pattern(message = "Email lack or invalid format ", regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])")
     private String email;
     
     @Column(length = 70, name = "nom", nullable = false)
-    @Pattern(regexp = "(?i)[a-z -_]{1,70}", message = "problem")
+    @Pattern(message = "Lastname lack or invalid format", regexp = "(?i)[a-z -_]{1,70}")
     private String lastName;
     
     @Column(length = 100, name = "prenom", nullable = false)
-    @Pattern(regexp = "(?i)[a-z -_]{1,100}")
+    @Pattern(message = "Name lack or invalid format,must not exceed 15 characters ", regexp = "(?i)[a-z -_]{1,100}" )
     private String firstName;
     
     @Column(columnDefinition = "date", name = "dateDeNaissance", nullable = false)
@@ -48,16 +48,16 @@ public class Utilisateur {
     @Column(length = 50, name = "motDePasse", nullable = false)
     private String password;
 
-    @Column(length = 1000, columnDefinition = "text")
-    @Pattern(regexp = "(?i)[a-z. -!,;:_()]{0,1000}", message = "Rentrez un maximum de 1000 charactères")
+    @Column(length = 450, columnDefinition = "text")
+    @Pattern(message = "Character number cant exceed 450", regexp = "(?i)[a-z. -!,;:_()]{0,1000}")
     private String description;
     
     @Column(length = 50, nullable = false)
-    @Pattern(regexp = "(?i)[a-z0-9-_]{4,50}")
+    @Pattern(message = "Pseudo lack or invalid format", regexp = "(?i)[a-z0-9-_]{4,50}")
     private String pseudo;
     
     @Column(name = "numeroTel", length = 10)
-    @Pattern(regexp = "^0[0-9]{9}$")
+    @Pattern(message = "Phone number lack or invalid format", regexp = "^0[0-9]{9}$")
     private String phone;
     
     @Column(name = "type", length = 1)

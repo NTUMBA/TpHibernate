@@ -13,7 +13,7 @@
 	</div>
 	  <h1>Projet Hibernate</h1>
 	  <h2>Identifiez-vous</h2>
-		 <form th:action="@{/register}" th:method="POST">
+		 <form th:action="@{/login}" th:method="POST">
        
           <input th:field="${userLogin.email}" th:type="email" th:placeholder="#{user.email}">
             <span th:if="${#fields.hasErrors('userLogin.email')}" th:errors="*{userLogin.email}"></span>

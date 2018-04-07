@@ -31,10 +31,11 @@ public class UtilisateurService {
 	    public Utilisateur findUtilisateurByEmailAndPassword(String email, String password){
 //	    	if(email == utilisateur.getEmail() && password ==utilisateur.getPassword())
 //	    	return utilisateurRepository.findUtilisateurByEmailAndPassword(email, password);
-	    	if(utilisateurRepository.getOne(email).getPassword().equals(password)){
-	    		return utilisateurRepository.getOne(email);
-	    	}
-	    	return null;
+//	    	if(utilisateurRepository.getOne(email).getPassword().equals(password)){
+//	    		return utilisateurRepository.getOne(email);
+//	    	}
+//	    	return null;
+	    	return utilisateurRepository.findUtilisateurByEmailAndPassword(email, password);
 	    	
 	    }
 	}

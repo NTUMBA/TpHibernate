@@ -90,10 +90,10 @@ public class HomeController {
         model.addAttribute("colorHair", ColorHair.values());
         model.addAttribute("typeHair", TypeHair.values());
 
-        return "fragments/form";
+        return "pagess/register";
     }
 
-    @PostMapping("/record")
+    @PostMapping("/register")
     public String postRegister(@Valid @ModelAttribute(value = "user") Utilisateur utilisateur, BindingResult userResult,
                                @Valid @ModelAttribute(value = "userLogin") Utilisateur userLogin, BindingResult userLoginResult,
                                @Valid @ModelAttribute(value = "adresse") Adresse adresse, BindingResult adresseResult,
@@ -116,7 +116,7 @@ public class HomeController {
             model.addAttribute("origine", Origine.values());
             model.addAttribute("colorHair", ColorHair.values());
             model.addAttribute("typeHair", TypeHair.values());
-            return "fragments/form";
+            return "pages/register";
         }
 
         situationService.save(situation);

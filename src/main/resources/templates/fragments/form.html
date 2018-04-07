@@ -1,21 +1,34 @@
-<!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
-<head>
-<title>Dating</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!-- <link rel="stylesheet" type="text/css" media="all" th:href="@{../static/css/main.css}" /> -->
-<link rel="stylesheet" type="text/css" media="all"
-	href="../css/main.css" />
-</head>
-<body>
-	<section>
+
+	<section xmlns:th="http://www.thymeleaf.org">
 	<div class="moines">
 	  <img src="img/moines.jpg"  alt="moines">
 	</div>
 	
 	<h1>LE SITE DE RENCONTRE <em>EROS</em></h1>
-		<form th:action="@{/fragmentsform}" th:method="POST">
+		<form th:action="@{/register}" th:method="POST">
 			<div class="container">
+				
+				<div class="photocentreInterest">
+					<fieldset>
+						<legend>PHOTOS</legend>
+						<label for="link" class="label-file" th:text="#{photo.link}"></label>
+						<input type="file" th:field="*{photo.link}" multiple="multiple"
+							th:placeholder="#{photo.link}" class="input-file"> <span
+							th:if="${#fields.hasErrors('photo.link')}"
+							th:errors="*{photo.link}"></span> <br> <img
+							src="img/couple.jpg" class="couple" alt="couple">
+					</fieldset>
+					<fieldset>
+						<legend>CENTRE D'INTERET</legend>
+						<input type="text" th:field="*{ci.sport}"
+							th:placeholder="#{ci.sport}"> <span
+							th:if="${#fields.hasErrors('ci.sport')}" th:errors="*{ci.sport}"></span>
+						<br> <input type="text" th:field="*{ci.hobby}"
+							th:placeholder="#{ci.hobby}"> <span
+							th:if="${#fields.hasErrors('ci.hobby')}" th:errors="*{ci.hobby}"></span>
+						<br>
+					</fieldset>
+				</div>
 				<div class="userIdentification">
 					<fieldset>
 						<legend>UTILISATEUR</legend>
@@ -96,27 +109,6 @@
 							th:errors="*{adresse.prefix}"></span> <br>
 					</fieldset>
 				</div>
-				<div class="photocentreInterest">
-					<fieldset>
-						<legend>PHOTOS</legend>
-						<label for="link" class="label-file" th:text="#{photo.link}"></label>
-						<input type="file" th:field="*{photo.link}" multiple="multiple"
-							th:placeholder="#{photo.link}" class="input-file"> <span
-							th:if="${#fields.hasErrors('photo.link')}"
-							th:errors="*{photo.link}"></span> <br> <img
-							src="img/couple.jpg" class="couple" alt="couple">
-					</fieldset>
-					<fieldset>
-						<legend>CENTRE D'INTERET</legend>
-						<input type="text" th:field="*{ci.sport}"
-							th:placeholder="#{ci.sport}"> <span
-							th:if="${#fields.hasErrors('ci.sport')}" th:errors="*{ci.sport}"></span>
-						<br> <input type="text" th:field="*{ci.hobby}"
-							th:placeholder="#{ci.hobby}"> <span
-							th:if="${#fields.hasErrors('ci.hobby')}" th:errors="*{ci.hobby}"></span>
-						<br>
-					</fieldset>
-				</div>
 				<div class="situationApparence">
 					<fieldset>
 						<legend>SITUATION</legend>
@@ -194,11 +186,15 @@
 						</select> <span th:if="${#fields.hasErrors('apparence.typeHair')}"
 							th:errors="*{apparence.typeHair}"></span> <br>
 					</fieldset>
+					<div >
+				    <img src="img/ade.jpg" class="plage" alt="plage">
+				   
 				</div>
-
+				</div>
+                
 
 			</div>
-
+    
 
 			<input class="response" type="submit" th:value="#{submit}">
 		</form>
@@ -206,5 +202,3 @@
 	</section>
 
 
-</body>
-</html>

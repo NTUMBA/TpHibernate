@@ -7,10 +7,13 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+nav{
+	margin:0 auto;
+}
 section{
 	
 	padding: 25px;
-	width: 82%;
+	width: 90%;
 	background-color: #add8e6;
 	text-align: center;
 	height: 100%;
@@ -20,19 +23,20 @@ section{
 section,h1{
 	margin: 0 auto;
 } 
- .moines{
+img {
 	
 	max-width:100px;
 	max-height: 100px ;
 	float: left;
 	border-radius: 20px 100px;
 }
-img .couple{
+ .couple,.plage{
 	max-width:300px;
 	max-height: 300px ;
 }
+
 h1{	
-	padding: 10px;
+	padding: 7px;
 	color: orange;
 	background-color: #FFE;
 	width: 20%;
@@ -52,6 +56,10 @@ ul{
 	background-color: orange;
 	border: 1px solid red;
 	display: flex;
+	justify-content:space-between;
+	list-style-type: none;
+	text-decoration: none;
+	
 }
 li{
 	color: white;
@@ -60,42 +68,29 @@ li{
 	list-style: none;
 	padding: 5px;
 }
-
-a{
-	padding: 6px;
-	text-decoration: none;
-	color: bluee;
-	width: 550px;
-	height: 200px;
-	background-color: #FFE;
-	border: 1px solid orange;
-}
 form{
 	
-	margin: 20px auto;
+	margin: 15px auto;
 	padding: 18px;
-	width: 87%;
+	width: 90%;
 	background-color: orange;
 	border-radius: 10px;
 }
 
-textarea{
-	width: 150px;
-	height: 150px;
-}
-input,textarea,select,option{
-	margin: 2px;
-}
 .container{
 	display: flex;
 }
 label{
-	margin-top: 8px;
+	margin-top: 13px;
 }
-input{
-	margin-top: 5px;
+fieldset,input,select{
+	margin-top: 8px;
 	text-align: center;
-	border-radius: 6px;
+	
+}
+
+fieldset,input,select,legend{
+border-radius: 6px;
 }
 .userIdentification,.photocentreInterest,.situationApparence{
 	margin: 0 auto;
@@ -118,42 +113,58 @@ input{
 	float: right;
 	width:250px;
 	height:100px;
-	margin: 50px auto;
+	margin: 42px auto;
 	background-color: #FFE  ;
 	color: blue;
 	font-weight: bold;
 }
-a .enregistrement{
-	color: #FFE!important;
-}
 a{
-   width: 550px;
-	height: 200px;
-}
-.validation{
-	width: 100px;
-	height: 70px;
-}
-.validation,a{
-	padding: 6px;
 	text-decoration: none;
-	color: bluee;
-	background-color: #FFE;
-	border: 1px solid orange;
 }
 
-
+.supprimer{
+	width: 300px;
+}
+.felicitation,.erreurDeConnection{
+	font-weight: bold;
+}
+.felicitation{
+	color: blue;
+	
+}
+.erreurDeConnection{
+	color: red;
+	
+}
+.plage{
+	margin: 30px 0px 30px 0px;;;
+}
+legend{
+	color: #c71585;
+	background-color: #ffe4b5;  
+	border: 1px solid #FFE;
+	padding: 4px;
+}
+a,footer{
+	color: #FFE;
+}
+a,legend,footer{
+	font-weight: bold;
+	
+}
 /*##########################PSEUDO CLASS ####*/
+a:hover{
+	font-size: 1.2em;
+	background-color: #ffe4b5;  
+	color: #c71585;
+	border: 2px solid #FFE;
+	padding: 4px;
+	
+}
 .response:hover{
 	font-size: 1.1em;
 	background-color: blue  ;
 	color: orange;
-}
-a:hover{
-	font-size: 1.1em;
-	background-color:orange ;
-	color: blue;
-	
 }
 
 

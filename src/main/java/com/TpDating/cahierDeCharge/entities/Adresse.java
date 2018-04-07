@@ -21,23 +21,23 @@ public class Adresse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 5, name = "codePostal", nullable = false)
-    @Pattern(regexp = "[0-9]{5}", message = "Problem")
+    @Pattern(regexp = "[0-9]{5}", message = "Postal code number lack or invalid format")
     private String postalCode;
     @Column(length = 50, name = "ville", nullable = false)
-    @Pattern(regexp = "(?i)[a-z -_]{1,50}")
+    @Pattern(regexp = "(?i)[a-z -_]{1,50}", message = "Town name lack or invalid format, exceed 50 characters")
     private String town;
     @Column(length = 5, name = "numero", nullable = false)
-    @Pattern(regexp = "[0-9]{1,5}", message = "problem")
+    @Pattern(regexp = "[0-9]{1,5}", message = "Number lack or invalid format")
     private String number;
     @Enumerated(EnumType.STRING)
     private AdressTypeStreet typeStreet;
     @Column(name = "nomRue", nullable = false)
-    @Pattern(regexp = "(?i)[a-z -_']{1,100}")
+    @Pattern(message = "Name street lack or invalid formatexceed 50 characters", regexp = "(?i)[a-z -_']{1,100}")
     private String nameStreet;
 
     private String complement;
     @Enumerated(EnumType.STRING)
-    @Column(length = 5, name = "prefixe")
+    @Column(length = 15, name = "prefixe")
     private AdressePrefixe prefix;
 
     @OneToMany(mappedBy = "adresse")
