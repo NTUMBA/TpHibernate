@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-  <head>
-	    <title>Dating welcome</title>
-	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <link rel="stylesheet" type="text/css" media="all" th:href="@{css/main.css}" />
-  </head>
-  <body>
-	<section>
+<head>
+<title>Dating welcome</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{css/main.css}" />
+</head>
+<body>
 	<img src="img/moines.jpg" alt="moines">
 	<!--header-->
-    <th:block th:replace="fragments/header :: header"></th:block>
-    <!--header-->
-	  <h1>CONGRATULATION</h1>
-		<p th:if="${session.nom != null}" th:text="|Bienvenue  ${session.pseudo}"><p>
-	</section>	
-  </body>
+	<th:block th:replace="fragments/header2"></th:block>
+	<!--header-->
+	<section>
+
+		<h1>CONGRATULATION SUCCESSFUL CONNECTION</h1>
+		<p class="felicitation" th:if="${session.nom != null}" th:text="|Bienvenue  ${session.pseudo}"></p>
+        <img src="img/DSCF5005.JPG" class="author" alt="author">
+		<!-- 	<form method="POST" action="uploadFile" enctype="multipart/form-data">
+			<fieldset>
+				<legend>PHOTOS</legend>
+				<label for="link" class="label-file" th:text="#{photo.link}"></label>
+				File to upload:
+				 <input type="file" name="file"><br /> 
+				 
+				 <input type="submit" value="Upload"> Upload the picture and file
+			</fieldset>
+
+		</form> -->
+		<!-- 	<form>
+
+			<fieldset>
+				<legend>PHOTOS</legend>
+				<label for="link" class="label-file" th:text="#{photo.link}"></label>
+				<input type="file" th:field="*{photo.link}" multiple="multiple"
+					th:placeholder="#{photo.link}" class="input-file"> <span
+					th:if="${#fields.hasErrors('photo.link')}"
+					th:errors="*{photo.link}"></span>
+
+			</fieldset>
+		</form> -->
+
+	</section>
+
+
+</body>
 </html>

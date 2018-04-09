@@ -1,0 +1,7 @@
+<nav xmlns:th="http://www.thymeleaf.org" th:fragment="header" class="header">
+    <ul>
+        <li><a th:href="@{/}" th:text="#{home}"></a></li>
+        <li th:if="${session.email == null}"><a href="#" th:text="#{login}"></a></li>
+        <li th:if="${session.email != null}"><a th:href="@{/logout}" th:text="#{logout}"></a></li>
+    </ul>
+</nav>

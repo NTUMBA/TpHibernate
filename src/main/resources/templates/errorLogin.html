@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-  <head>
-	    <title>Dating error</title>
-	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <link rel="stylesheet" type="text/css" media="all" th:href="@{css/main.css}" />
-  </head>
+<head>
+    <title th:text="${title}"></title>
+    <th:block th:replace="fragments/head"></th:block>
+</head>
   <body>
-	<section>
-	<img src="img/moines.jpg" alt="moines">
+  <img src="img/moines.jpg" alt="moines">
 	<!--header-->
-    <th:block th:replace="fragments/header :: header"></th:block>
-    <!--header-->
+	<th:block th:replace="fragments/header2"></th:block>
+	<!--header-->
+	<section>
 	
-	  <h1>DOMMAGE</h1>
+	  <h1>UNFORTUNATELY</h1>
 	  <div class="erreurDeconnexion">
-	   <p>L'identifiant et le mot de passe ne correspondent aucun utilisateur</p>
+	   <p class="erreurDeConnection"> Id and password does'nt match to any user, try again or register</p>
 	</div>
 		
 	</section>	
+	
   </body>
 </html>

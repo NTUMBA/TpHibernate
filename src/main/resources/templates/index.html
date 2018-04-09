@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-  <head>
-	    <title>Dating</title>
-	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
-	    
-  </head>
-  <body>
+<head>
+<title>Dating</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
+
+</head>
+<body>
 	<section>
-	<div class="moines">
-	  <img src="img/moines.jpg"  alt="moines">
-	</div>
-	  <h1>Projet Hibernate</h1>
-	  <h2>Identifiez-vous</h2>
-		 <form th:action="@{/login}" th:method="POST">
-       
-          <input th:field="${userLogin.email}" th:type="email" th:placeholder="#{user.email}">
-            <span th:if="${#fields.hasErrors('userLogin.email')}" th:errors="*{userLogin.email}"></span>
-            <br>
-           <input th:field="${userLogin.password}" th:type="password" th:placeholder="#{user.password}">
-            <span th:if="${#fields.hasErrors('userLogin.password')}" th:errors="*{userLogin.password}"></span>
-            <br>
-           
-        <input class="validation" type="submit">
-    </form>
-    <div class="enregistrement">
-    <a th:href="@{/fragmentsform}" >NOUVEAU VISITEUR ENREGISTEZ-VOUS ICI</a>
-    </div>
-	</section>	
-  </body>
+		<div class="moines">
+			<img src="img/moines.jpg" alt="moines">
+		</div>
+		<h1>HIBERNATE PROJECT</h1>
+		<h2>LOGIN</h2>
+		<form th:action="@{/login}" th:method="POST">
+
+			<input th:field="${userLogin.email}" th:type="email"
+				th:placeholder="#{user.email}"> <span
+				th:if="${#fields.hasErrors('userLogin.email')}"
+				th:errors="*{userLogin.email}"></span> <br> <input
+				th:field="${userLogin.password}" th:type="password"
+				th:placeholder="#{user.password}"> <span
+				th:if="${#fields.hasErrors('userLogin.password')}"
+				th:errors="*{userLogin.password}"></span> <br> <input
+				class="validation" type="submit">
+		</form>
+		<div class="enregistrement">
+			<a th:href="@{/fragmentsform}">REGISTER</a>
+		</div>
+	</section>
+	<!--footer-->
+	<th:block th:replace="fragments/footer"></th:block>
+	<!--footer-->
+</body>
 </html>

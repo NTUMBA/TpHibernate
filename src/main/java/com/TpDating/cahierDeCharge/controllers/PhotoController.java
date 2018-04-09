@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import com.TpDating.cahierDeCharge.entities.Photo;
 import com.TpDating.cahierDeCharge.services.PhotoService;
 
-
+//Previous fileController dDO NOT ADD IT
 @Controller
 public class PhotoController {
 
