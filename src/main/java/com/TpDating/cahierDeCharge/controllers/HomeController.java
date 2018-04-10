@@ -36,14 +36,13 @@ import com.TpDating.cahierDeCharge.services.PhotoService;
 import com.TpDating.cahierDeCharge.services.SituationService;
 import com.TpDating.cahierDeCharge.services.UtilisateurService;
 
-
 @Controller
 public class HomeController {
 
     private final UtilisateurService utilisateurService;
     private final AdresseService adresseService;
     private final SituationService situationService;
-    private final PhotoService photoService;
+
     private final Centre_interetService centre_interetService;
     private final ApparenceService apparenceService;
     private final PhotoController photoController;
@@ -53,7 +52,7 @@ public class HomeController {
         this.utilisateurService = utilisateurService;
         this.adresseService = adresseService;
         this.situationService = situationService;
-        this.photoService = photoService;
+      
         this.centre_interetService = centre_interetService;
         this.apparenceService = apparenceService;
         this.photoController = photoController;
@@ -90,7 +89,7 @@ public class HomeController {
         model.addAttribute("colorHair", ColorHair.values());
         model.addAttribute("typeHair", TypeHair.values());
 
-        return "pagess/register";
+        return "pages/register";
     }
 
     @PostMapping("/register")
@@ -133,8 +132,7 @@ public class HomeController {
 
         utilisateurService.save(utilisateur);
 
-        photo.setUtilisateur(utilisateur);
-        photoController.save(photo);
+       
 
 
 

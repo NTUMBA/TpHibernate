@@ -2,43 +2,38 @@ package com.TpDating.cahierDeCharge.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.TpDating.cahierDeCharge.entities.Photo;
-import com.TpDating.cahierDeCharge.services.PhotoService;
+import com.TpDating.cahierDeCharge.services.FileUploadService;
 
-//Previous fileController dDO NOT ADD IT
+
 @Controller
 public class PhotoController {
 
-    private String str;
-    private final PhotoService photoService;
+    private final FileUploadService fileUploadService;
 
     @Autowired
-    public PhotoController(PhotoService photoService) {
-        this.photoService = photoService;
+    public PhotoController(FileUploadService fileUploadService) {
+        this.fileUploadService = fileUploadService;
     }
 
-    public void save(Photo photo){
-        for (String p :photo.getLink().split(",")) {
-            Photo ph = new Photo();
-            ph.setUtilisateur(photo.getUtilisateur());
-            ph.setLink(p);
-            photoService.save(ph);
+    
+    @PostMapping(value = "/uploadFile")   
+    public String save(@RequestParam("file") MultipartFile file ,Photo photo){
+    	fileUploadService.uploadFileHandler(file);
+          return "/welcome";
         }
-    }
+    
 
-    public PhotoService getPhotoService() {
-        return photoService;
-    }
-
-    public String getStr() {
-        return str;
-    }
-
-    public void setStr(String str) {
-        this.str = str;
+    public FileUploadService getFileUploadService() {
+        return fileUploadService;
     }
 
 
 }
+
+
 
